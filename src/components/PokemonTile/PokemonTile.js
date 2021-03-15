@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   PokemonCard,
@@ -7,10 +8,9 @@ import {
   PokemonName,
   Feature,
   PokemonFeatures,
-  CompanyName,
 } from "./PokemonTile.style";
 
-export default function PokemonTile({ pokemon }) {
+function PokemonTile({ pokemon }) {
   const {
     name,
     height,
@@ -43,3 +43,13 @@ export default function PokemonTile({ pokemon }) {
     </>
   );
 }
+
+PokemonTile.PropTypes = {
+  name: PropTypes.string,
+  height: PropTypes.number,
+  weight: PropTypes.number,
+  back_default: PropTypes.string,
+  base_experience: PropTypes.number,
+};
+
+export default PokemonTile;

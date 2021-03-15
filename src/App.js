@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import PokemonList from "./components/PokemonList/PokemonList";
 import { Text } from "./themes/globalStyles";
 import DisplayMessage from "./components/Loading/DisplayMessage";
-
 import { initialFetch } from "./store/actions/actions";
 
 function App() {

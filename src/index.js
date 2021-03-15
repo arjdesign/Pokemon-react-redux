@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import Theme from "./themes/Theme";
 import GlobalStyle from "./themes/globalStyles";
 import { Provider } from "react-redux";
