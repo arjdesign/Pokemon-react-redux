@@ -16,7 +16,8 @@ function App() {
   const randomPokiDataIsLoading = useSelector(
     (state) => state.randomFetchPoki.loading
   );
-  console.count("APP");
+  //console.count("APP");
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(initialFetch);
