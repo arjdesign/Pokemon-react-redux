@@ -1,5 +1,5 @@
 import {
-  FETCH_INIT,
+  FETCH_INIT_RANDOM,
   FETCH_FAILURE,
   FETCH_RANDOM_SUCCESS,
 } from "../actions/actionTypes";
@@ -12,7 +12,7 @@ const intialState = {
 
 export const randomFetchReducer = (state = intialState, action) => {
   switch (action.type) {
-    case FETCH_INIT: {
+    case FETCH_INIT_RANDOM: {
       return {
         ...state,
         loading: true,

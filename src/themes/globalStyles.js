@@ -3,14 +3,12 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-* {
+* { 
     margin:0;
     padding:0;
     font-family: "Source Sans Pro", sans-serif;
-    
 }
 `;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,6 +22,24 @@ export const Container = styled.div`
     flex-direction: column;
   }
   transition: all 0.5s ease;
+`;
+
+export const PokeContainer = styled(Container)`
+${Container}
+padding:  0;
+flex-direction: row;
+justify-content: center;
+flex-wrap:wrap;
+align-items: center;
+
+@media screen and (max-width: 960px) {
+  display: flex;
+  margin:10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
 
 //1) Theme
@@ -63,24 +79,6 @@ export const Toggle = styled.button`
 export const Text = styled.span`
   margin: 20px;
   color: ${(props) => props.theme.pokemonName};
-`;
-
-export const PokeContainer = styled(Container)`
-padding:  0;
-flex-direction: row;
-justify-content: center;
-display: flex;
-flex-wrap:wrap;
-align-items: center;
-${Container}
-@media screen and (max-width: 960px) {
-  display: flex;
-  margin:10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 `;
 
 export default GlobalStyle;

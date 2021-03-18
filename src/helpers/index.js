@@ -2,6 +2,8 @@ const MIN = 1;
 const MAX = 899;
 
 export const pokemons = {
+  saman: 8,
+  hason: 10,
   squirtle: 7,
   charmander: 4,
   balbasur: 1,

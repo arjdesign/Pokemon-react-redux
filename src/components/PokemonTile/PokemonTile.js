@@ -44,7 +44,7 @@ function PokemonTile({ pokemon }) {
   );
 }
 
-PokemonTile.PropTypes = {
+PokemonTile.propTypes = {
   name: PropTypes.string,
   height: PropTypes.number,
   weight: PropTypes.number,

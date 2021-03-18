@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Search from "./components/Search/Search";
-import { useSelector, useDispatch } from "react-redux";
+import useStoreData from "./hooks/useStoreData";
 import PokemonList from "./components/PokemonList/PokemonList";
 import { Text } from "./themes/globalStyles";
 import DisplayMessage from "./components/Loading/DisplayMessage";
 import { initialFetch } from "./store/actions/actions";
 
 function App() {
-  const initialPokiData = useSelector((state) => state.inititalFetchPoki.data);
-  const randomPokiData = useSelector((state) => state.randomFetchPoki.data);
-  const initialPokiDataIsLoading = useSelector(
-    (state) => state.inititalFetchPoki.loading
-  );
-  const randomPokiDataIsLoading = useSelector(
-    (state) => state.randomFetchPoki.loading
-  );
-  //console.count("APP");
+  const {
+    initialPokiData,
+    randomPokiData,
+    initialPokiDataIsLoading,
+    randomPokiDataIsLoading,
+  } = useStoreData();
 
+  //console.count("APP");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(initialFetch);
-  }, []);
+  }, [dispatch]);
 
   const displayInitialPokiData = initialPokiDataIsLoading ? (
     <DisplayMessage>
@@ -34,7 +33,7 @@ function App() {
 
   const displayRandomPokiData = randomPokiDataIsLoading ? (
     <DisplayMessage>
-      <Text>One min plz! your favourite pokemon is loading.</Text>
+      <Text>One sec plz! your favourite Pokemon is loading.</Text>
     </DisplayMessage>
   ) : (
     <PokemonList data={randomPokiData} />
